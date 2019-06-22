@@ -10,7 +10,7 @@ module.exports = {
       preProcessor: 'scss',
       patterns: [
         path.resolve(__dirname, 'src/assets/scss/main.scss'),
-        path.resolve(__dirname, 'src/assets/styles/scss/*.scss'),
+        path.resolve(__dirname, 'src/assets/scss/scss/*.scss'),
       ],
     },
   },

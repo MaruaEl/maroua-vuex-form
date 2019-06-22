@@ -2,7 +2,7 @@
 @include normalize();
 @import './variables.scss';
 @import './helpers.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 
 
@@ -26,18 +26,6 @@ html {
     height: 100%;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    @include max-screen(xl) {
-        font-size: 100%;
-    }
-    @include max-screen(lg) {
-        font-size: 95%;
-    }
-    @include max-screen(md) {
-        font-size: 90%;
-    }
-    @include max-screen(sm) {
-        font-size: 90%;
-    }
 }
 
 
@@ -63,8 +51,8 @@ a, button {
     letter-spacing: 0.5px;
 }
 a {
+	  text-decoration: none;
     color: inherit;
-
     &:hover {
         text-decoration: none;
     }
@@ -100,8 +88,8 @@ ul {
     background-color: $color-dirty-white;
 }
 
-// Fade in out using Vuejs transition component
-// Vuejs transitions classes es. "'class-name' + '-enter-active'"
+// Vuejs transition animations
+
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s ease-in;
@@ -110,6 +98,10 @@ ul {
     transition: opacity .3s ease-out;
     opacity: 0;
 }
-.fade-in {
-    @include fadeIn(1s);
+
+.error-fade-enter-active, .error-fade-leave-active {
+    transition: opacity .5s;
+}
+.error-fade-enter, .error-fade-leave-to {
+    opacity: 0;
 }
