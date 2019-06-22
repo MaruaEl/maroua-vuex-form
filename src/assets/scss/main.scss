@@ -1,0 +1,115 @@
+@import '~normalize-scss';
+@include normalize();
+@import './variables.scss';
+@import './helpers.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a,
+button {
+    cursor: pointer;
+    outline: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+html {
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    @include max-screen(xl) {
+        font-size: 100%;
+    }
+    @include max-screen(lg) {
+        font-size: 95%;
+    }
+    @include max-screen(md) {
+        font-size: 90%;
+    }
+    @include max-screen(sm) {
+        font-size: 90%;
+    }
+}
+
+
+body {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 600;
+}
+a, button {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+a {
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: calcRem(540);
+    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+        max-width: calcRem(850);
+        padding-right: 0;
+        padding-left: 0;
+        width: 85%;
+    }
+}
+
+.wrapper__body {
+    min-height: 100vh;
+    background-color: $color-dirty-white;
+}
+
+// Fade in out using Vuejs transition component
+// Vuejs transitions classes es. "'class-name' + '-enter-active'"
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease-in;
+}
+.fade-enter, .fade-leave-to {
+    transition: opacity .3s ease-out;
+    opacity: 0;
+}
+.fade-in {
+    @include fadeIn(1s);
+}
