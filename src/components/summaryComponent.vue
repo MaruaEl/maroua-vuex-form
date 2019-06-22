@@ -1,7 +1,7 @@
 <template>
   <div class="summary">
     <div class="summary__container">
-      <h2 class="summary__title">Available entris</h2>
+      <h2 class="summary__title">Available entries</h2>
       <ul
         class="summary__data"
         v-for="(entry, index) in summaryData" :key="index">
@@ -28,4 +28,7 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+
+</style>
 

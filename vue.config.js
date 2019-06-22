@@ -1,5 +1,5 @@
 // vue.config.js
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   /* eslint-disable indent */
@@ -10,7 +10,7 @@ module.exports = {
       preProcessor: 'scss',
       patterns: [
         path.resolve(__dirname, 'src/assets/scss/main.scss'),
-        path.resolve(__dirname, 'src/assets/scss/scss/*.scss'),
+        path.resolve(__dirname, 'src/assets/scss/*.scss'),
       ],
     },
   },

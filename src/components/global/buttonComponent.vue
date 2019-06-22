@@ -1,13 +1,13 @@
 <template>
   <button
     :href="href"
-    :target="target"
     :style="style"
     :disabled="disabled"
     :id="buttonId"
     @click="clickEvent"
     class="button"
   >
+  {{ text }}
   </button>
 </template>
 
@@ -105,7 +105,13 @@ button {
   border-radius: calcRem(7);
   background-color: $color-purple;
   border-color: $color-purple;
+  color: $color-white;
+  transition: all 0.3s ease-in-out;
 
+  &:hover {
+    background-color: darken($color-purple, 6%);
+    transform: scale(1.02);
+  }
   &:focus {
     outline: 0;
   }

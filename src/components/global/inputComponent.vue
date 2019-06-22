@@ -5,7 +5,6 @@
       :class="`input input__${type} input__${type}--${borderColor}`">
         <input
           id="text_input"
-          ref="field"
           type="text"
           :placeholder="placeholder"
           v-model="text"
@@ -28,7 +27,6 @@
       :class="`input input__${type} input__${type}--${borderColor}`">
       <input
         type="email"
-        ref="email"
         id="email"
         :placeholder="placeholder"
         v-model="email"
@@ -108,10 +106,6 @@ export default {
       return this.error ? 'red' : 'grey';
     },
   },
-  mounted() {
-    const refs = this.$refs;
-    return refs.email ? refs.email.focus() : refs.field.focus();
-  },
   methods: {
     returnInputData(value) {
       this.$emit('returnInputData', value);
@@ -124,21 +118,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// input:-webkit-autofill:active {
-//     -webkit-box-shadow: 0 0 0 30px white inset;
-//     box-shadow: 0 0 0 30px white inset;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    box-shadow: 0 0 0 30px white inset;
 
-// }
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// input:-webkit-autofill:active {
-//   -webkit-box-shadow: 0 0 0 30px white inset;
-//   box-shadow: 0 0 0 30px white inset;
-// }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  box-shadow: 0 0 0 30px white inset;
+}
 input {
   border: none;
   background-color: transparent;
@@ -157,10 +151,21 @@ input {
     box-shadow: none;
   }
 }
-
+textarea {
+  background-color: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  border: 0;
+  border-color: transparent;
+  border-image: transparent;
+  padding: 0;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
 .input {
   background-color: $color-white;
-  border-radius: calcRem(2);
+  border-radius: calcRem(6);
   box-shadow: 0 0 0 2px hsla(0, 0%, 7%, 0.2),
       0 16px 18px -16px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: none;
@@ -170,9 +175,11 @@ input {
   text-align: left;
   overflow: auto;
   height: 100%;
+  margin: 1rem auto;
   transition: all 0.3s ease-in-out;
   &__email,
-  &__text {
+  &__text,
+  &__text-area{
 
     &--grey {
       border: calcRem(1) solid $color-light-grey;
