@@ -2,9 +2,9 @@ export default {
   methods: {
     async checkForm(formData) {
       const dataLeght = Object.keys(formData).length;
-      const test = await this.isValidEmail(formData);
+      const testEmail = await this.isValidEmail(formData);
 
-      if (dataLeght >= 3 && test === true) {
+      if (dataLeght >= 3 && testEmail === true) {
         this.formError = false;
         this.$emit('handleSuccess', formData);
       } else {

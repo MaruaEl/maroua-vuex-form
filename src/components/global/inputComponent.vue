@@ -123,23 +123,23 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px white inset;
-    box-shadow: 0 0 0 30px white inset;
+    -webkit-box-shadow: 0 0 0 30px $color-white inset;
+    box-shadow: 0 0 0 30px $color-white inset;
 
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset;
-  box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px $color-white inset;
+  box-shadow: 0 0 0 30px $color-white inset;
 }
 input {
   border: none;
   background-color: transparent;
   font-size: calcRem(14);
   font-weight: 300;
-  // color: $color-grey;
+  color: $color-grey;
   width: 100%;
   overflow: auto;
   height: inherit;

@@ -40,7 +40,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
 }
 a, button {
     cursor: pointer;
@@ -89,12 +89,11 @@ ul {
 
 // Vuejs transition animations
 
-
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .3s ease-in;
+  transition: opacity .5s ease-in;
 }
 .fade-enter, .fade-leave-to {
-    transition: opacity .3s ease-out;
+    transition: opacity .5s ease-out;
     opacity: 0;
 }
 

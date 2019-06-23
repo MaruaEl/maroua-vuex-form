@@ -1,10 +1,10 @@
 <template>
   <div class="form">
     <form
-      v-show="hideForm"
       id="summary-form"
       @submit.prevent="checkForm(formData)"
       method="post"
+      :class="{'form-opacity' : !showForm}"
       class="form__container">
       <input-component
         @returnInputData="saveInput($event, 'firstName')"
@@ -31,6 +31,7 @@
       />
 
       <button-component
+        :disabled="!showForm"
         :margin="'1rem auto'"
         :width="'8rem'"
       />
@@ -51,7 +52,7 @@ export default {
     buttonComponent,
   },
   props: {
-    hideForm: {
+    showForm: {
       type: Boolean,
       default: true,
       required: false,
@@ -77,5 +78,8 @@ export default {
     display: flex;
     flex-direction: column;
   }
+}
+.form-opacity {
+  opacity: 0.2;
 }
 </style>

@@ -16,10 +16,7 @@ export default new Vuex.Store({
   mutations: {
     SET_SUMMARY_DATA(state, payload) {
       state.summaryData = payload;
-      state.showForm = true;
-      console.log('------------------------------------');
-      console.log('store', payload, state.showForm);
-      console.log('------------------------------------');
+      state.showForm = false;
     },
   },
 });

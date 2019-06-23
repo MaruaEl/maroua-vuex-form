@@ -1,10 +1,21 @@
-# maroua-vuex-form
+# Maroua vuex form
+![](./public/readme-image.png)
+Simple vue page. Form data handled using vuex and a simple store with no modules, to keep it simple and straight forward.
+
+Used vue cli 3 to generate project
+normalize scss to reset css
+I prefered not to use any frontend UI framework, because is a quite simple form and I enjoyed more to do my own.
+
+I've Used global reusable components for good practice, actions are dispatched from the parent view.
+main.scss imports variables, normalize etc
+
+
+-----
 
 ## Project setup
 ```
 yarn install
 ```
-
 ### Compiles and hot-reloads for development
 ```
 yarn run dev
@@ -13,16 +24,6 @@ yarn run dev
 ### Compiles and minifies for production
 ```
 yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
 ```
 
 ### Customize configuration

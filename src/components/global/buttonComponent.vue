@@ -18,55 +18,55 @@ export default {
   props: {
     text: {
       type: String,
-			default: 'Add',
-			required: false,
+      default: 'Add',
+      required: false,
     },
     width: {
       type: String,
-			default: '100%',
-			required: false,
-		},
+      default: '100%',
+      required: false,
+    },
     fontSize: {
       type: String,
-			default: '1rem',
-			required: false,
-		},
+      default: '1rem',
+      required: false,
+    },
     fontWeight: {
       type: String,
-			default: '600',
-			required: false,
-		},
+      default: '600',
+      required: false,
+    },
     padding: {
       type: String,
-			default: '1rem',
-			required: false,
-		},
-		margin: {
+      default: '1rem',
+      required: false,
+    },
+    margin: {
       type: String,
       default: '',
-			required: false,
-		},
+      required: false,
+    },
     href: {
-			default: false,
+      default: false,
 
-			required: false,
-		},
+      required: false,
+    },
     disabled: {
       type: Boolean,
-			default: false,
+      default: false,
 
-			required: false,
-		},
+      required: false,
+    },
     buttonId: {
       type: String,
-			default: '',
-			required: false,
-		},
-		borderRadius: {
+      default: '',
+      required: false,
+    },
+    borderRadius: {
       type: String,
-			default: '',
-			required: false,
-		},
+      default: '',
+      required: false,
+    },
   },
   computed: {
     style() {
@@ -100,6 +100,10 @@ button {
 
   &:hover {
     outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
 .button {

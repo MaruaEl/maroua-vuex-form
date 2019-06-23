@@ -1,8 +1,13 @@
 <template>
   <main class="container">
-    <summary-component></summary-component>
+    <transition name="fade-enter">
+      <summary-component
+        :summaryData="storeSummaryData"
+      />
+    </transition>
     <form-component
-      :hideForm="showForm"
+      :showForm="showForm"
+      :key="showForm"
       @handleSuccess="submitData"
     />
   </main>
@@ -21,6 +26,7 @@ export default {
   computed: {
     ...mapState({
       showForm: state => state.showForm,
+      storeSummaryData: state => state.summaryData,
     }),
   },
   methods: {
@@ -28,7 +34,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-
-</style>
-
