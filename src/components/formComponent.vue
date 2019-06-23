@@ -1,27 +1,31 @@
 <template>
   <div class="form">
     <form
+      v-show="hideForm"
       id="summary-form"
-      @submit="checkForm(formData)"
+      @submit.prevent="checkForm(formData)"
       method="post"
       class="form__container">
       <input-component
-        @returnInputData="saveInput"
+        @returnInputData="saveInput($event, 'firstName')"
         :placeholder="'First Name'"
         :type="'text'"
+        :error="formError"
       />
       <input-component
-        @returnInputData="saveInput"
+        @returnInputData="saveInput($event, 'surname')"
         :placeholder="'Surname'"
         :type="'text'"
+        :error="formError"
       />
       <input-component
-        @returnInputData="saveInput"
+        @returnInputData="saveInput($event, 'email')"
         :placeholder="'Email'"
         :type="'email'"
+        :error="formError"
       />
       <input-component
-        @returnInputData="saveInput"
+        @returnInputData="saveInput($event, 'query')"
         :label="'Customer query'"
         :type="'text-area'"
       />
@@ -35,29 +39,34 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import inputComponent from './global/inputComponent.vue';
 import buttonComponent from './global/buttonComponent.vue';
+import formValidation from '../mixins/validations-methods/form-validations';
+
 export default {
   name: 'form-component',
+  mixins: [formValidation],
   components: {
     inputComponent,
     buttonComponent,
   },
+  props: {
+    hideForm: {
+      type: Boolean,
+      default: true,
+      required: false,
+    },
+  },
   data() {
     return {
-      formData: {
-        firstName: '',
-        surname: '',
-        emails: '',
-        customerQuery: '',
-      },
+      formData: {},
+      formError: false,
     };
   },
   methods: {
-    ...mapActions(['']),
-    saveInput(value) {
-      console.log(value);
+    saveInput(value, field) {
+      this.formError = false;
+      this.formData[field] = value;
     },
   },
 };

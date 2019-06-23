@@ -18,52 +18,54 @@ export default {
   props: {
     text: {
       type: String,
-			default: "Add",
-			required: false
+			default: 'Add',
+			required: false,
     },
     width: {
       type: String,
-			default: "100%",
-			required: false
-    },
+			default: '100%',
+			required: false,
+		},
     fontSize: {
       type: String,
-			default: "1rem",
-			required: false
-    },
+			default: '1rem',
+			required: false,
+		},
     fontWeight: {
       type: String,
-			default: "600",
-			required: false
-    },
+			default: '600',
+			required: false,
+		},
     padding: {
       type: String,
-			default: "1rem",
-			required: false
+			default: '1rem',
+			required: false,
 		},
 		margin: {
       type: String,
-			default: "",
-			required: false
+      default: '',
+			required: false,
 		},
     href: {
 			default: false,
-			required: false
-    },
+
+			required: false,
+		},
     disabled: {
       type: Boolean,
 			default: false,
-			required: false
-    },
+
+			required: false,
+		},
     buttonId: {
       type: String,
 			default: '',
-			required: false
+			required: false,
 		},
 		borderRadius: {
       type: String,
 			default: '',
-			required: false
+			required: false,
 		},
   },
   computed: {
@@ -86,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 a {
   text-align: center;
   cursor: pointer;

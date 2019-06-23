@@ -49,8 +49,9 @@
       <label for="story">{{label}}</label>
 
       <textarea
-        v-model="textArea"
         id="text-area"
+        v-model="textArea"
+        @keyup="$event.keyCode !== 13 && returnInputData(textArea)"
         name="text-area"
         rows="5" cols="33">
       </textarea>

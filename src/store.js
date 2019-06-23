@@ -6,9 +6,20 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     summaryData: {},
+    showForm: true,
   },
   actions: {
-    // save,
+    submitData({ commit }, formData) {
+      commit('SET_SUMMARY_DATA', formData);
+    },
   },
-  mutations: {},
+  mutations: {
+    SET_SUMMARY_DATA(state, payload) {
+      state.summaryData = payload;
+      state.showForm = true;
+      console.log('------------------------------------');
+      console.log('store', payload, state.showForm);
+      console.log('------------------------------------');
+    },
+  },
 });

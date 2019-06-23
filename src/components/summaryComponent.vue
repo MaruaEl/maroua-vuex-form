@@ -23,12 +23,24 @@ export default {
   },
   computed: {
     ...mapState({
-      summaryData: state => state.summaryData,
+      storeSummaryData: state => state.summaryData,
     }),
+    summaryData() {
+      return this.storeSummaryData;
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
-
+.summary {
+  &__title {
+    font-weight: 400;
+  }
+  &__data {
+    font-weight: 400;
+    font-size: caclRem(12);
+    padding-left: 0.4rem;
+    margin: 1rem 0;
+  }
+}
 </style>
-
