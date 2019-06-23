@@ -2,8 +2,8 @@
 ![](./public/readme-image.png)
 Simple vue page. Form data handled using vuex and a simple store with no modules, to keep it simple and straight forward.
 
-Used vue cli 3 to generate project
-normalize scss to reset css
+Used vue cli 3 to generate the project.
+Normalize scss to reset css.
 I prefered not to use any frontend UI framework, because is a quite simple form and I enjoyed more to do my own.
 
 I've Used global reusable components for good practice, actions are dispatched from the parent view.
