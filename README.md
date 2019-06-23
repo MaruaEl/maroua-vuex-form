@@ -9,7 +9,6 @@ I prefered not to use any frontend UI framework, because is a quite simple form 
 I've Used global reusable components for good practice, actions are dispatched from the parent view.
 main.scss imports variables, normalize etc
 
-
 -----
 
 ## Project setup
